@@ -2,7 +2,7 @@
 
 이 저장소는 **설백** 브랜드 웹사이트를 만드는 **Vertex팀** 작업 공간입니다.
 
-배포 주소: _(연결 후 여기에 적힙니다)_
+배포 주소: https://seolbaek-vertex.progen-web.workers.dev
 
 ---
 
