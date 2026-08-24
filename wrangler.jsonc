@@ -15,6 +15,6 @@
     "GITHUB_BRANCH": "main",
     "GITHUB_REPOS": "seolbaek-tensorflow,seolbaek-vertex",
     "ADMIN_ENABLED": "false",
-    "ADMIN_URL": "https://seolbaek-tensorflow.progen-web.workers.dev/admin"
+    "ADMIN_URL": "https://seolbaek-admin.progen-web.workers.dev/admin"
   }
 }
