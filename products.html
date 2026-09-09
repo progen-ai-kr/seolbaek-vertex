@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>제품 — 브랜드 이름</title>
-  <meta name="description" content="브랜드의 제품(컬렉션)을 소개합니다." />
+  <title>제품 분류 — 브랜드 이름</title>
+  <meta name="description" content="구매의상, 장신구, 대여의상 제품을 분류별로 확인하세요." />
   <link rel="icon" href="images/favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -27,15 +27,39 @@
   <!-- [작성서 05: 취급 품목] -->
   <section class="page-head">
     <h1>제품</h1>
-    <p>취급 품목을 여기에 적으세요. (예: Dress / Jacket / Shirt / Skirt)</p>
+    <p>필요한 제품 분류를 선택해 둘러보세요.</p>
   </section>
 
-  <!-- ===== 제품 목록 =====
-       ★ 제품은 여기 HTML이 아니라 products.json 파일에서 관리합니다.
-       products.json에 제품을 추가하면 이 목록과 상세 페이지에 자동으로 나타납니다. -->
+  <!-- 제품 데이터는 각 분류 페이지에서 products.json을 불러옵니다. -->
   <section class="section">
-    <div class="grid" id="product-list">
-      <!-- products.json 내용이 자동으로 채워집니다 -->
+    <div class="product-categories">
+      <a class="product-category" href="product-purchase.html">
+        <span class="product-category-number">01</span>
+        <div>
+          <p class="eyebrow">PURCHASE</p>
+          <h2>구매의상</h2>
+          <p>오래 간직하며 입을 의상을 만나보세요.</p>
+        </div>
+        <span class="product-category-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="product-category" href="product-accessories.html">
+        <span class="product-category-number">02</span>
+        <div>
+          <p class="eyebrow">ACCESSORIES</p>
+          <h2>장신구</h2>
+          <p>옷차림에 섬세한 인상을 더하는 장신구입니다.</p>
+        </div>
+        <span class="product-category-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="product-category" href="product-rental.html">
+        <span class="product-category-number">03</span>
+        <div>
+          <p class="eyebrow">RENTAL</p>
+          <h2>대여의상</h2>
+          <p>특별한 시간을 위한 의상을 대여해 보세요.</p>
+        </div>
+        <span class="product-category-arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 
@@ -49,34 +73,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="catalog.js?v=20260826-rich-editor-1"></script>
-  <script>
-    // 공개된 products.json 제품을 카드로 그립니다. 학생은 CSS로 자유롭게 디자인할 수 있습니다.
-    ProductCatalog.loadVisibleProducts()
-      .then((products) => {
-        const box = document.getElementById("product-list");
-        box.innerHTML = products
-          .map((p) => {
-            const image = ProductCatalog.safeImageUrl(p.images && p.images[0]);
-            const img = image
-              ? '<img src="' + ProductCatalog.escapeHtml(image) + '" alt="' + ProductCatalog.escapeHtml(p.name) + '" onerror="this.remove()" />'
-              : "";
-            const price = p.price ? '<p class="price">' + ProductCatalog.escapeHtml(p.price) + "</p>" : "";
-            return (
-              '<a class="card" href="product.html?id=' + encodeURIComponent(p.id) + '">' +
-              '<div class="card-img">' + img + "</div>" +
-              '<p class="k">' + ProductCatalog.escapeHtml(p.label || p.category || "") + "</p>" +
-              "<h3>" + ProductCatalog.escapeHtml(p.name) + "</h3>" +
-              "<p>" + ProductCatalog.escapeHtml(p.summary || "") + "</p>" + price +
-              "</a>"
-            );
-          })
-          .join("");
-      })
-      .catch(() => {
-        document.getElementById("product-list").innerHTML =
-          "<p>제품을 불러오지 못했습니다. 로컬에서는 npx serve 로 미리보기 하세요.</p>";
-      });
-  </script>
 </body>
 </html>

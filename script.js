@@ -10,5 +10,29 @@ if (toggle && menu) {
   });
 }
 
-// 여기에 다른 동작을 추가할 수 있습니다.
-// 예: Codex에게 "스크롤하면 메뉴 배경을 진하게 해줘" 처럼 말하면 코드가 채워집니다.
+// 홈 히어로: 스크롤 시간에 맞춰 겹친 오간자가 걷히도록 합니다.
+const heroScene = document.querySelector(".hero-scene");
+const hero = heroScene && heroScene.querySelector(".hero");
+
+if (heroScene && hero) {
+  let scheduled = false;
+
+  function updateHeroFabric() {
+    const sceneTop = heroScene.getBoundingClientRect().top;
+    const travel = Math.max(heroScene.offsetHeight - window.innerHeight, 1);
+    const progress = Math.min(Math.max(-sceneTop / travel, 0), 1);
+
+    hero.style.setProperty("--hero-progress", progress.toFixed(4));
+    scheduled = false;
+  }
+
+  function requestHeroUpdate() {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(updateHeroFabric);
+  }
+
+  updateHeroFabric();
+  window.addEventListener("scroll", requestHeroUpdate, { passive: true });
+  window.addEventListener("resize", requestHeroUpdate);
+}

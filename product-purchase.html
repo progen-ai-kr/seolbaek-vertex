@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>구매의상 — 브랜드 이름</title>
+  <meta name="description" content="브랜드의 구매의상 제품을 소개합니다." />
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-product-group="purchase">
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">BRAND</a>
+      <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
+      <nav class="nav-menu">
+        <a href="index.html">홈</a>
+        <a href="about.html">브랜드 소개</a>
+        <a href="products.html" class="active">제품</a>
+        <a href="portfolio.html">포트폴리오</a>
+        <a href="contact.html">문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <p class="eyebrow">PURCHASE</p>
+    <h1>구매의상</h1>
+    <p>오래 간직하며 입을 의상을 만나보세요.</p>
+  </section>
+
+  <nav class="product-subnav" aria-label="제품 분류">
+    <a href="product-purchase.html" class="active" aria-current="page">구매의상</a>
+    <a href="product-accessories.html">장신구</a>
+    <a href="product-rental.html">대여의상</a>
+  </nav>
+
+  <section class="section">
+    <div class="grid" id="product-list" aria-live="polite">
+      <p class="product-empty">제품을 불러오는 중입니다.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="logo">BRAND</p>
+    <p class="biz">상호: ○○○ · 대표자: ○○○<br />사업자등록번호: 000-00-00000 · 주소: ○○○</p>
+    <p>© 브랜드 이름. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="catalog.js?v=20260826-rich-editor-1"></script>
+  <script src="products-page.js"></script>
+</body>
+</html>
