@@ -3,18 +3,37 @@
    (예: RE:STITCH → --bg:#F7F4EE; --ink:#111; --accent:#0E5A5A;)
    ========================================================== */
 :root {
-  --bg: #faf9f6;        /* 페이지 배경 */
-  --surface: #f1efe9;   /* 카드·옅은 배경 */
-  --ink: #1a1a1a;       /* 기본 글자색 */
-  --ink-soft: #5c5c56;  /* 보조 글자색 */
-  --accent: #1a1a1a;    /* 강조색 (버튼·포인트) */
-  --line: #e4e1d8;      /* 테두리 선 */
+  --bg: #EAE3D2;        /* 주 색상: 따뜻한 한지 베이지 */
+  --surface: #DED6C4;   /* 주 색상보다 한 톤 짙은 배경 */
+  --ink: #333246;       /* 보조 포인트: 본문과 제목 */
+  --ink-soft: #666477;  /* 부드러운 보조 글자색 */
+  --accent: #1E4571;    /* 주요 포인트: 버튼과 강조선 */
+  --line: #C9C0AE;      /* 섬유처럼 가는 경계선 */
+  --nav-bg: rgba(234, 227, 210, .90);
+  --surface-soft: rgba(222, 214, 196, .48);
+  --accent-soft: rgba(30, 69, 113, .12);
+  --hero-wash: rgba(234, 227, 210, .34);
+  --shadow: rgba(51, 50, 70, .12);
+  --light-glow: rgba(255, 251, 235, .52);
+  --light-edge: rgba(234, 227, 210, .06);
+  --category-panel: rgba(234, 227, 210, .98);
+  --category-light: rgba(255, 252, 239, .58);
+  --fabric-edge: rgba(51, 50, 70, .10);
+  --fabric-shadow: rgba(51, 50, 70, .09);
+  --footer-bg: #333246;
+  --footer-text: #EAE3D2;
+
+  /* 메인 사진 위에 사용하는 색 */
+  --hero-text: #333246;
+  --hero-overlay: rgba(234, 227, 210, .34);
+  --hero-shadow: rgba(234, 227, 210, .72);
 
   --font-main: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  --font-display: var(--font-main);  /* 제목용 폰트 (다르게 쓰고 싶으면 변경) */
+  --font-display: "Noto Serif KR", "Batang", "바탕", serif;  /* 제목은 차분한 명조 계열 */
 
-  --radius: 12px;
+  --radius: 2px;
   --maxw: 1080px;
+  --nav-height: 77px;
 }
 
 /* ===== 기본값 (모바일 우선 — 기본이 휴대폰 화면) ===== */
@@ -35,10 +54,11 @@ a { color: inherit; }
 .nav-menu a.active { color: var(--ink); font-weight: 700; }
 
 /* ===== 히어로 (홈 첫 화면) ===== */
-.hero { min-height: 72vh; background: var(--surface); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 22px; gap: 16px; }
-.hero .eyebrow { font-size: 12px; letter-spacing: 3px; color: var(--ink-soft); text-transform: uppercase; }
-.hero h1 { font-family: var(--font-display); font-size: clamp(28px, 8vw, 58px); letter-spacing: 1px; }
-.hero p { color: var(--ink-soft); max-width: 560px; }
+.hero { min-height: 72vh; background-color: var(--surface); background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url("images/products/look-01/1787721859194-2b0dbc5f.webp"); background-position: center 28%; background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 22px; gap: 16px; color: var(--hero-text); }
+.hero .eyebrow { font-size: 12px; letter-spacing: 3px; color: var(--hero-text); text-transform: uppercase; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(28px, 8vw, 58px); letter-spacing: 1px; line-height: 1.25; text-shadow: 0 2px 18px var(--hero-shadow); }
+.hero p { color: var(--hero-text); max-width: 560px; text-shadow: 0 1px 12px var(--hero-shadow); }
+.hero .btn { background: var(--hero-text); color: var(--ink); }
 .btn { display: inline-block; border: 0; background: var(--accent); color: var(--bg); padding: 14px 32px; border-radius: 999px; font: inherit; font-size: 15px; letter-spacing: 1px; text-decoration: none; cursor: pointer; }
 .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
 
@@ -228,4 +248,570 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   .product-carousel-track { transition: none; }
+}
+
+/* ==========================================================
+   2026 무드: 미니멀 시크 · 한지 · 겹쳐진 오간자
+   장식은 줄이고, 얇은 선과 투명한 층으로 시간의 결을 표현합니다.
+   ========================================================== */
+body {
+  letter-spacing: -.01em;
+  word-break: keep-all;
+}
+
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+.nav {
+  background: var(--nav-bg);
+  border-bottom-color: var(--line);
+  backdrop-filter: blur(16px);
+}
+.nav-inner { padding: 16px 22px; }
+.logo {
+  font-weight: 500;
+  letter-spacing: .16em;
+}
+.nav-toggle {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 22px;
+}
+.nav-menu { background: var(--bg); }
+.nav-menu a {
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+}
+.nav-menu a.active { color: var(--accent); font-weight: 600; }
+
+.hero {
+  min-height: calc(100svh - 65px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--surface);
+  background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url("images/hero-hanbok-reveal.png");
+  background-position: center;
+  padding: 72px 22px;
+  gap: 18px;
+  color: var(--hero-text);
+  border-bottom: 1px solid var(--line);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -25%;
+  bottom: -25%;
+  left: -65%;
+  width: 92%;
+  background: linear-gradient(112deg, transparent 6%, var(--light-edge) 28%, var(--light-glow) 50%, var(--light-edge) 72%, transparent 94%);
+  filter: blur(7px);
+  transform: translateX(0) skewX(-8deg);
+  animation: light-through-time 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.hero > * { position: relative; z-index: 1; }
+.hero .eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .28em;
+}
+.hero h1 {
+  max-width: 820px;
+  font-size: clamp(38px, 10vw, 72px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -.045em;
+  text-shadow: 0 2px 22px var(--hero-shadow);
+}
+.hero p:not(.eyebrow) {
+  max-width: 520px;
+  color: var(--ink);
+  font-size: 15px;
+  text-shadow: 0 1px 14px var(--hero-shadow);
+}
+.hero .btn { margin-top: 8px; background: var(--ink); color: var(--bg); }
+
+.btn {
+  min-height: 48px;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  letter-spacing: .08em;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+.btn:hover { background: var(--accent); transform: translateY(-2px); }
+.btn.ghost { border-color: var(--line); color: var(--ink); }
+
+.page-head {
+  min-height: 34svh;
+  display: grid;
+  align-content: center;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(118deg, var(--surface-soft) 0 34%, transparent 34% 100%),
+    linear-gradient(62deg, transparent 0 68%, var(--accent-soft) 68% 69%, transparent 69% 100%);
+  border-bottom: 1px solid var(--line);
+}
+.page-head h1 {
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+.page-head p { color: var(--ink-soft); }
+
+.section { position: relative; }
+.section + .section { border-top: 1px solid var(--line); }
+.section .eyebrow {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .28em;
+}
+.section h2 {
+  margin-bottom: 26px;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -.035em;
+}
+.section h3 { font-weight: 500; }
+.lead { line-height: 1.95; }
+
+.features { gap: 0; }
+.feature {
+  padding: 26px 4px 30px;
+  background: transparent;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+}
+.feature .num { color: var(--accent); font-family: var(--font-display); }
+.feature h3 { font-family: var(--font-display); font-weight: 400; }
+.feature p { color: var(--ink-soft); }
+
+.grid { gap: 28px 14px; }
+.card { display: block; }
+.card-img {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+.card-img img { transition: transform .7s ease, filter .7s ease; }
+.card:hover .card-img img { transform: scale(1.025); filter: saturate(.84); }
+.card .k { color: var(--accent); font-weight: 700; }
+.card h3 {
+  margin-top: 5px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.tags { gap: 8px; }
+.tags span {
+  border-color: var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  padding: 5px 11px;
+}
+
+.look-img,
+.product-carousel-viewport,
+.product-block-image,
+.product-gallery figure,
+.product-rich-text img,
+.product-block-copy img,
+.product-full-image img,
+.portfolio-content img,
+.portfolio-content iframe,
+.portfolio-content video { border-radius: var(--radius); }
+
+.product-info .k,
+.purchase-dialog-eyebrow { color: var(--accent); font-weight: 700; }
+.product-info h1 { font-weight: 400; letter-spacing: -.035em; }
+.product-price { font-family: var(--font-display); font-weight: 500; }
+.product-highlight,
+.purchase-dialog-content { background: var(--surface-soft); border: 1px solid var(--line); }
+.purchase-dialog { border: 1px solid var(--line); box-shadow: 0 28px 90px var(--shadow); }
+.product-carousel-button { border-color: var(--line); background: var(--footer-bg); }
+.product-carousel-dot[aria-current="true"] { background: var(--accent); }
+
+.portfolio-content { font-size: 16px; line-height: 1.9; }
+.portfolio-content h2,
+.portfolio-content h3 { font-weight: 400; letter-spacing: -.025em; }
+.portfolio-content blockquote {
+  border-left-color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+.portfolio-content hr { border-top-color: var(--line); }
+
+.contact-list { gap: 0; border-top: 1px solid var(--line); }
+.contact-item {
+  padding: 24px 4px;
+  background: transparent;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+}
+.contact-item .label { color: var(--accent); font-weight: 700; }
+.contact-item .value a { text-underline-offset: 4px; }
+
+.footer {
+  padding-top: 56px;
+  padding-bottom: 56px;
+  background: var(--footer-bg);
+  border-top: 0;
+  color: var(--footer-text);
+}
+.footer .logo { color: var(--bg); }
+
+@media (min-width: 720px) {
+  .nav-inner { padding: 18px 24px; }
+  .nav-menu { background: transparent; }
+  .nav-menu a { position: relative; font-size: 13px; }
+  .nav-menu a.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -9px;
+    left: 0;
+    height: 1px;
+    background: var(--accent);
+  }
+  .hero { min-height: min(820px, calc(100svh - 69px)); padding: 100px 40px; }
+  .section { padding-top: 96px; padding-bottom: 96px; }
+  .features { gap: 34px; }
+  .grid { gap: 48px 24px; }
+  .page-head { min-height: 42svh; }
+  .contact-list { grid-template-columns: repeat(2, 1fr); }
+  .contact-item:nth-child(odd) { padding-right: 32px; }
+  .contact-item:nth-child(even) { padding-left: 32px; border-left: 1px solid var(--line); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .card-img img { transition: none; }
+  .hero::before {
+    left: 4%;
+    animation: none;
+    transform: skewX(-8deg);
+  }
+}
+
+@keyframes light-through-time {
+  0% {
+    opacity: .38;
+    transform: translateX(0) skewX(-8deg);
+  }
+  45% { opacity: .72; }
+  100% {
+    opacity: .5;
+    transform: translateX(185%) skewX(-8deg);
+  }
+}
+
+/* ===== 제품 분류 페이지 ===== */
+.page-head .eyebrow {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .28em;
+}
+
+.product-categories {
+  position: relative;
+  isolation: isolate;
+  padding: 8px 0 24px;
+}
+.product-category {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 30px;
+  gap: 12px;
+  align-items: center;
+  min-height: 164px;
+  overflow: hidden;
+  padding: 28px 22px;
+  border: 1px solid var(--fabric-edge);
+  border-radius: 26px 8px 24px 10px;
+  background: var(--category-panel);
+  box-shadow: 0 8px 24px var(--fabric-shadow);
+  text-decoration: none;
+  transition: transform .65s ease, box-shadow .65s ease, border-color .4s ease;
+}
+.product-category + .product-category { margin-top: -7px; }
+.product-category:nth-child(1) { z-index: 1; margin-right: 14px; }
+.product-category:nth-child(2) { z-index: 2; margin-left: 10px; border-radius: 10px 25px 9px 24px; }
+.product-category:nth-child(3) { z-index: 3; margin-right: 6px; border-radius: 24px 10px 26px 8px; }
+.product-category::before,
+.product-category::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: transform .75s ease, opacity .5s ease;
+}
+.product-category::before {
+  z-index: -2;
+  background-image: url("images/hero-organza.png");
+  background-position: center;
+  background-size: cover;
+  opacity: .035;
+  filter: grayscale(1) contrast(.85);
+  transform: scale(1.08);
+}
+.product-category::after {
+  z-index: -1;
+  inset: -35% -25%;
+  background: radial-gradient(ellipse at 24% 50%, var(--category-light) 0 18%, transparent 67%);
+  opacity: 0;
+  filter: blur(16px);
+  transform: translateX(-18%) scale(.78);
+  transform-origin: left center;
+  transition: transform 1.15s cubic-bezier(.22, .7, .28, 1), opacity .8s ease;
+}
+.product-category:nth-child(1)::before { background-position: left 30%; }
+.product-category:nth-child(2)::before { background-position: center 55%; }
+.product-category:nth-child(3)::before { background-position: right 72%; }
+.product-category:hover {
+  z-index: 4;
+  border-color: var(--fabric-edge);
+  transform: translateY(-3px);
+  box-shadow: 0 13px 32px var(--fabric-shadow);
+}
+.product-category:hover::before { opacity: .05; transform: scale(1.1); }
+.product-category:hover::after { opacity: .9; transform: translateX(20%) scale(1.12); }
+.product-category > * { position: relative; z-index: 1; }
+.product-category-number {
+  align-self: start;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+.product-category .eyebrow { margin-bottom: 3px; }
+.product-category h2 {
+  margin: 0 0 6px;
+  font-size: clamp(25px, 7vw, 40px);
+}
+.product-category p:last-child { color: var(--ink-soft); font-size: 14px; }
+.product-category-arrow {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 17px;
+  place-items: center;
+  transition: transform .25s ease;
+}
+.product-category:hover .product-category-arrow { transform: translateX(5px); }
+.product-category:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.product-subnav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: min(100%, var(--maxw));
+  margin: 0 auto;
+  border-bottom: 1px solid var(--line);
+}
+.product-subnav a {
+  display: grid;
+  min-height: 54px;
+  padding: 8px 5px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  place-items: center;
+}
+.product-subnav a + a { border-left: 1px solid var(--line); }
+.product-subnav a.active {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+}
+.product-empty {
+  grid-column: 1 / -1;
+  min-height: 180px;
+  display: grid;
+  color: var(--ink-soft);
+  text-align: center;
+  place-items: center;
+}
+
+@media (min-width: 720px) {
+  .product-category {
+    grid-template-columns: 60px minmax(0, 1fr) 60px;
+    min-height: 205px;
+    padding: 38px;
+  }
+  .product-category + .product-category { margin-top: -10px; }
+  .product-category:nth-child(1) { margin-right: 9%; }
+  .product-category:nth-child(2) { margin-right: 3%; margin-left: 7%; }
+  .product-category:nth-child(3) { margin-right: 7%; margin-left: 2%; }
+  .product-category p:last-child { font-size: 15px; }
+  .product-subnav a { min-height: 62px; font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-category,
+  .product-category::before,
+  .product-category::after,
+  .product-category-arrow { transition: none; }
+}
+
+/* ===== 홈: 스크롤하며 오간자가 걷히고 한복의 선이 드러나는 장면 ===== */
+.hero-scene {
+  position: relative;
+  height: 165svh;
+  background: var(--surface);
+}
+.hero-scene .hero {
+  --hero-progress: 0;
+  position: sticky;
+  top: var(--nav-height);
+  min-height: calc(100svh - var(--nav-height));
+  height: calc(100svh - var(--nav-height));
+}
+.hero-content {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  gap: 18px;
+}
+.hero-fabric-layers {
+  position: absolute !important;
+  z-index: 0 !important;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-fabric-layer {
+  position: absolute;
+  inset: -2%;
+  background-color: var(--surface);
+  background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url("images/hero-organza.png");
+  background-position: center;
+  background-size: cover;
+  will-change: transform, opacity;
+}
+.hero-fabric-layer.layer-one {
+  clip-path: polygon(0 0, 60% 0, 48% 100%, 0 100%);
+  opacity: calc(1 - (var(--hero-progress) * .9));
+  transform: translate3d(calc(var(--hero-progress) * -82%), calc(var(--hero-progress) * -8%), 0) rotate(calc(var(--hero-progress) * -3deg));
+}
+.hero-fabric-layer.layer-two {
+  clip-path: polygon(43% 0, 100% 0, 100% 100%, 55% 100%, 34% 54%);
+  opacity: calc(1 - (var(--hero-progress) * .94));
+  transform: translate3d(calc(var(--hero-progress) * 78%), calc(var(--hero-progress) * -5%), 0) rotate(calc(var(--hero-progress) * 2.5deg));
+}
+.hero-fabric-layer.layer-three {
+  clip-path: polygon(0 64%, 34% 53%, 66% 66%, 100% 52%, 100% 100%, 0 100%);
+  opacity: calc(1 - var(--hero-progress));
+  transform: translate3d(calc(var(--hero-progress) * 8%), calc(var(--hero-progress) * 72%), 0) rotate(calc(var(--hero-progress) * 1.5deg));
+}
+
+@media (min-width: 720px) {
+  :root { --nav-height: 69px; }
+  .hero-scene { height: 175svh; }
+  .hero-content { gap: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scene { height: auto; }
+  .hero-scene .hero {
+    position: relative;
+    top: auto;
+    height: auto;
+  }
+  .hero-fabric-layers { display: none; }
+}
+
+/* ===== 제품 목록: 오간자 질감과 마우스 방향 3D 틸트 ===== */
+#product-list { perspective: 1200px; }
+#product-list .card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --card-shadow-x: 0px;
+  --card-shadow-y: 12px;
+  --card-light-x: 50%;
+  --card-light-y: 18%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 10px 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--category-panel);
+  box-shadow: var(--card-shadow-x) var(--card-shadow-y) 30px var(--shadow);
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateZ(0);
+  transform-style: preserve-3d;
+  transition: transform .18s ease-out, box-shadow .18s ease-out, border-color .25s ease;
+  will-change: transform, box-shadow;
+}
+#product-list .card::before,
+#product-list .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+#product-list .card::before {
+  z-index: 0;
+  background-image: url("images/hero-organza.png");
+  background-position: center;
+  background-size: cover;
+  opacity: .065;
+  filter: grayscale(1);
+}
+#product-list .card::after {
+  z-index: 2;
+  background: radial-gradient(circle at var(--card-light-x) var(--card-light-y), var(--category-light) 0, transparent 48%);
+  opacity: .7;
+  transition: opacity .25s ease;
+}
+#product-list .card > * {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(14px);
+}
+#product-list .card .card-img {
+  border-color: var(--line);
+  transform: translateZ(26px);
+}
+#product-list .card:hover,
+#product-list .card:focus-visible { border-color: var(--accent); }
+#product-list .card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (hover: none), (pointer: coarse) {
+  #product-list .card {
+    transform: none;
+    transition: border-color .25s ease;
+    will-change: auto;
+  }
+  #product-list .card > *,
+  #product-list .card .card-img { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #product-list .card {
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+  #product-list .card > *,
+  #product-list .card .card-img { transform: none; }
+  #product-list .card::after { transition: none; }
 }
