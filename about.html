@@ -3,81 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>브랜드 소개 — 브랜드 이름</title>
-  <meta name="description" content="브랜드 스토리와 철학을 소개합니다." />
-  <link rel="icon" href="images/favicon.png" />
+  <title>About SEOLBAEK — 설백 / 雪白</title>
+  <meta name="description" content="한복을 오늘의 옷으로 번역하는 컨템포러리 코리안 패션 브랜드, 설백의 이야기." />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="about-page">
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="nav"><div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="설백 홈">SEOLBAEK</a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu">☰</button>
+    <nav class="nav-menu" id="site-menu" aria-label="주요 메뉴">
+      <a href="index.html">홈</a><a href="about.html" class="active" aria-current="page">브랜드 소개</a><a href="products.html">제품</a><a href="portfolio.html">포트폴리오</a><a href="contact.html">문의</a>
+    </nav>
+  </div></header>
 
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">BRAND</a>
-      <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
-      <nav class="nav-menu">
-        <a href="index.html">홈</a>
-        <a href="about.html" class="active">브랜드 소개</a>
-        <a href="products.html">제품</a>
-        <a href="portfolio.html">포트폴리오</a>
-        <a href="contact.html">문의</a>
-      </nav>
-    </div>
-  </header>
+  <main id="main">
+    <section class="ba-origin" aria-labelledby="origin-title">
+      <p class="ba-kicker">ABOUT SEOLBAEK</p><div class="ba-origin-white" aria-hidden="true">白</div>
+      <h1 id="origin-title">모든 것은<br /><em>흰 바탕</em>에서 시작된다.</h1>
+      <div class="ba-origin-ideas"><span class="ba-origin-left">백의 민족</span><span class="ba-origin-right">흰 캔버스에서 시작되는 창작</span></div>
+      <div class="ba-origin-mark"><strong>雪 白</strong><span>SEOLBAEK</span></div><p class="ba-scroll-note">ORIGIN / 01</p>
+    </section>
 
-  <!-- [작성서 02: 한 줄 소개] -->
-  <section class="page-head">
-    <h1>브랜드 소개</h1>
-    <p>브랜드 한 줄 소개를 여기에 적으세요.</p>
-  </section>
+    <section class="ba-why" aria-labelledby="why-title"><p class="ba-kicker">WHY WE STARTED</p>
+      <h2 id="why-title">우리는 한복을<br /><em>다시 입기</em><br />시작했다.</h2>
+      <p class="ba-side-copy">전통은 보존되는 것이 아니라,<br />오늘의 삶 안에서 다시 입혀질 때 살아납니다.<br /><br />설백은 한복을 과거의 옷으로 재현하지 않습니다.<br />지금의 옷장 안에서 자연스럽게 꺼내 입고,<br />오늘의 옷과 함께 살아가는 모습을 상상합니다.</p>
+      <figure class="ba-why-image"><img src="images/collection/look-03-yunseul.png" alt="오늘의 옷으로 입는 윤슬 투피스" width="3058" height="4096" loading="lazy" /><figcaption>HANBOK / IN CONTEMPORARY LIFE</figcaption></figure>
+    </section>
 
-  <!-- [작성서 02: 브랜드 스토리] 문단째 붙여넣으면 됩니다 -->
-  <section class="section">
-    <p class="eyebrow">OUR STORY</p>
-    <h2>브랜드 스토리</h2>
-    <p class="lead">
-      브랜드 스토리를 여기에 붙여넣으세요. 문단이 여러 개면
-      &lt;p&gt; 태그를 복사해서 나눠 넣으면 됩니다.
-    </p>
-    <p class="lead" style="margin-top:14px;">
-      두 번째 문단 예시입니다.
-    </p>
-  </section>
 
-  <!-- [작성서 02: 브랜드 키워드] -->
-  <section class="section">
-    <p class="eyebrow">KEYWORDS</p>
-    <h2>브랜드 키워드</h2>
-    <div class="tags">
-      <span>키워드1</span><span>키워드2</span><span>키워드3</span><span>키워드4</span><span>키워드5</span>
-    </div>
-  </section>
+    <section class="ba-philosophy" aria-label="설백의 브랜드 철학">
+      <article class="ba-principle ba-principle-boundary"><div class="ba-principle-text"><span class="ba-number">01</span><p class="ba-kicker">BEAUTY BEYOND BOUNDARIES</p><h2>경계를 넘는<br />아름다움</h2><p>조각을 잇고, 낯선 표면을 겹칩니다.<br />한복과 일상의 사이에 새로운 선을 긋습니다.</p></div><figure class="ba-principle-image ba-image-tall"><img src="images/collection/look-01-jogakbo.png" alt="조각보 패치워크 보디스와 푸른 오간자 치마의 조각보 원피스" width="896" height="1199" loading="lazy" /><figcaption>LOOK 01 / JOGAKBO DRESS</figcaption></figure></article>
+      <article class="ba-principle ba-principle-language"><div class="ba-principle-text"><span class="ba-number">02</span><p class="ba-kicker">KOREAN AESTHETICS IN TODAY'S LANGUAGE</p><h2>한국의 미감,<br />지금의 언어로</h2><p>주황 벽돌집의 색과 능소화의 움직임을<br />오늘의 실루엣으로 번역합니다.</p></div><figure class="ba-principle-image ba-image-offset"><img src="images/collection/look-02-neungsowha.png" alt="버드나무빛 상의와 주홍색 비대칭 치마의 능소화 원피스" width="3060" height="4096" loading="lazy" /><figcaption>LOOK 02 / NEUNGSOWHA DRESS</figcaption></figure><div class="ba-color-note" aria-hidden="true"><span>WILLOW</span><i></i><span>VERMILION</span></div></article>
+      <article class="ba-principle ba-principle-jungchon"><div class="ba-principle-text"><span class="ba-number">03</span><p class="ba-kicker">THE SPIRIT OF JUNGCHON</p><h2>중촌동의<br />영혼을 담다</h2><p>오래된 골목, 손끝의 기술, 오후의 빛.<br />옷은 장소의 기억을 몸 가까이 가져옵니다.</p></div><figure class="ba-principle-image ba-image-wide"><img src="images/collection/look-04-bamboo.png" alt="짙은 먹빛과 청록빛이 겹친 대나무 두루마기" width="3061" height="4096" loading="lazy" /><figcaption>LOOK 04 / BAMBOO DURUMAGI</figcaption></figure></article>
+    </section>
 
-  <!-- [작성서 02: 브랜드 철학] -->
-  <section class="section">
-    <p class="eyebrow">PHILOSOPHY</p>
-    <h2>브랜드 철학</h2>
-    <p class="lead">브랜드 철학 문구를 여기에 적으세요.</p>
-  </section>
+    <section class="ba-soft-bite" aria-labelledby="soft-bite-title"><div class="ba-rough" aria-hidden="true"><span>ROUGH</span><b>NEEDLE / METAL / MACHINE</b><div class="ba-stitch-line"></div></div><div class="ba-soft" aria-hidden="true"><span>SOFT</span></div><div class="ba-soft-bite-copy"><p class="ba-kicker">ROUGH × SOFT</p><h2 id="soft-bite-title">부드러운<br /><em>쇠맛</em></h2><p>중촌의 거친 손끝과<br />오간자의 고요한 움직임.</p><span>THE SOFT BITE</span></div><figure class="ba-bite-look"><img src="images/collection/look-04-bamboo.png" alt="대나무 두루마기의 구조적인 전면 실루엣" width="3061" height="4096" loading="lazy" /><figcaption>STRUCTURE / RESTRAINT / CRAFT</figcaption></figure><figure class="ba-bite-counter"><img src="images/collection/look-03-yunseul.png" alt="흰색에서 짙은 청색으로 번지는 윤슬 투피스" width="3058" height="4096" loading="lazy" /><figcaption>LIGHT BECOMES FABRIC</figcaption></figure></section>
 
-  <!-- [작성서 02: 사람·공간 사진] 대표·작업실·작업 과정 컷 -->
-  <section class="section">
-    <p class="eyebrow">PEOPLE & SPACE</p>
-    <h2>만드는 사람들</h2>
-    <div class="grid">
-      <div class="card"><div class="card-img"></div><p>사진 설명</p></div>
-      <div class="card"><div class="card-img"></div><p>사진 설명</p></div>
-    </div>
-  </section>
+    <section class="ba-jungchon" aria-labelledby="jungchon-title"><div class="ba-jungchon-copy"><p class="ba-kicker">WHY JUNGCHON</p><h2 id="jungchon-title">설백은<br />왜 중촌이어야 하는가.</h2><p>골목의 속도와 장인의 손끝, 미싱의 리듬이 한 벌의 옷을 만듭니다. 중촌은 단순한 주소가 아니라 설백의 미감이 태어난 현장입니다.</p><div class="ba-jungchon-words"><span>골목</span><span>장인</span><span>미싱</span><span>바늘</span><span>원단</span><span>빛</span><span>시간</span></div></div><figure><img src="images/collection/look-04-bamboo.png" alt="중촌의 구조와 장인정신을 담은 대나무 두루마기" width="3061" height="4096" loading="lazy" /><figcaption>17:00 / JUNGCHON — STRUCTURE IN LIGHT</figcaption></figure></section>
 
-  <footer class="footer">
-    <p class="logo">BRAND</p>
-    <p class="biz">
-      상호: ○○○ · 대표자: ○○○<br />
-      사업자등록번호: 000-00-00000 · 주소: ○○○
-    </p>
-    <p>© 브랜드 이름. All rights reserved.</p>
-  </footer>
+    <section class="ba-experience" aria-labelledby="experience-title"><header class="ba-experience-head"><p class="ba-kicker">THE GARMENT, CLOSE TO THE BODY</p><h2 id="experience-title">입는다는 것의<br /><em>세 가지 감각</em></h2></header><div class="ba-sense ba-sense-meet"><span class="ba-number">01</span><p class="ba-kicker">MEET</p><h3>손끝으로</h3><small>BY FINGERTIPS</small></div><div class="ba-sense ba-sense-feel"><span class="ba-number">02</span><p class="ba-kicker">EXPERIENCE</p><h3>피부로</h3><small>ON THE SKIN</small></div><div class="ba-sense ba-sense-remember"><span class="ba-number">03</span><p class="ba-kicker">REMEMBER</p><h3>자연으로</h3><small>THROUGH NATURE</small></div></section>
 
+    <section class="ba-personality" aria-label="SEOLBAEK brand personality"><p>QUIETLY ELEGANT <span>단아하되 고루하지 않은</span></p><p>REFINED SENSIBILITY <span>감각적이되 과하지 않은</span></p><p>WARMLY APPROACHABLE <span>친근하되 가볍지 않은</span></p></section>
+
+    <section class="ba-collection" aria-labelledby="collection-title"><header class="ba-collection-head"><p class="ba-kicker">2026 / COLLECTION</p><h2 id="collection-title">시간을<br /><em>직조하다</em></h2><p>Four looks, one living language.</p></header>
+      <article class="ba-look ba-look-one"><figure><img src="images/collection/look-01-jogakbo.png" alt="조각보 원피스 전체 실루엣" width="896" height="1199" loading="lazy" /><figcaption>LOOK 01 / WEAVE ON — JUNGCHON</figcaption></figure><div><p class="ba-kicker">PATCHWORK / WEAVING</p><h3>조각보 원피스</h3><p>조각을 잇고,<br />시간을 입다.</p></div></article>
+      <article class="ba-look ba-look-two"><div><p class="ba-kicker">14:00 / JUNGCHON</p><h3>능소화 원피스</h3><p>전통의 색을<br />오늘의 실루엣으로.</p></div><figure><img src="images/collection/look-02-neungsowha.png" alt="능소화 원피스 전체 실루엣" width="3060" height="4096" loading="lazy" /><figcaption>COLOR / BOTANICAL FORM</figcaption></figure></article>
+      <article class="ba-look ba-look-three"><figure><img src="images/collection/look-03-yunseul.png" alt="윤슬 투피스 전체 실루엣" width="3058" height="4096" loading="lazy" /><figcaption>LOOK 03 / 15:00 — YUDEUNGCHEON</figcaption></figure><div><p class="ba-kicker">LIGHT / GRADIENT / DRAPING</p><h3>윤슬 투피스</h3><p>설백이 청현으로<br />젖어드는 시간.</p></div></article>
+      <article class="ba-look ba-look-four"><div><p class="ba-kicker">17:00 / JUNGCHON</p><h3>대나무 두루마기</h3><p>빛이 대나무를<br />감싸는 시간.</p></div><figure><img src="images/collection/look-04-bamboo.png" alt="대나무 두루마기 전체 실루엣" width="3061" height="4096" loading="lazy" /><figcaption>STRUCTURE / CRAFTSMANSHIP</figcaption></figure></article>
+    </section>
+
+    <section class="ba-closing" aria-labelledby="closing-title"><p class="ba-kicker">SEOLBAEK / 雪白</p><h2 id="closing-title">한복은<br />오늘의 옷이다.</h2><p>흰 바탕에서 시작해,<br />당신의 몸 위에서 계속됩니다.</p><a href="products.html">COLLECTION 보기 <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="footer ba-footer"><p class="logo">SEOLBAEK <span>雪白</span></p><p class="biz">상호·대표자·사업자등록번호·주소는 브랜드 운영 정보 확정 후 표기됩니다.</p><p>© 2026 SEOLBAEK. All rights reserved.</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
