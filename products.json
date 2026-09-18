@@ -2,6 +2,31 @@
   "_설명": "브랜드 담당자가 사이트 관리자에서 제품과 상세페이지를 관리합니다. 학생은 이 파일을 직접 수정하지 않습니다.",
   "products": [
     {
+      "id": "8b3a9e59-dff0-4534-9b59-434a182b38b6",
+      "published": true,
+      "featured": false,
+      "label": "WOMEN",
+      "name": "대나무 두루마기",
+      "summary": "대나무 군락지의 차분함과 절제됨을 담은 두루마기",
+      "category": "Collection",
+      "price": "",
+      "keywords": [
+        "생활한복 • 두루마기 • 자켓"
+      ],
+      "images": [
+        "images/products/8b3a9e59-dff0-4534-9b59-434a182b38b6/1789710341756-5bd3ac26.png"
+      ],
+      "buyLabel": "구매하기",
+      "buyLink": "",
+      "buyNotice": "",
+      "sections": [
+        {
+          "type": "rich_text",
+          "body": "<p><br></p>"
+        }
+      ]
+    },
+    {
       "id": "look-01",
       "published": true,
       "featured": true,
