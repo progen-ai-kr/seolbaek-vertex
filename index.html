@@ -46,47 +46,15 @@
         <span class="hero-fabric-layer layer-three"></span>
       </div>
       <div class="hero-content">
-        <p class="eyebrow">BRAND KEYWORD · KEYWORD</p>
-        <h1>메인 카피 (20자 내)</h1>
-        <p>서브 카피 (40자 내) — 브랜드를 소개하는 짧은 문장을 적으세요.</p>
+        <h1>雪白</h1>
         <a href="products.html" class="btn">컬렉션 보기</a>
       </div>
     </section>
   </div>
 
-  <!-- ===== 강점 3가지 [작성서 04 홈: 강점3가지] ===== -->
-  <section class="section">
-    <p class="eyebrow">WHY US</p>
-    <h2>우리 브랜드의 강점</h2>
-    <div class="features">
-      <div class="feature">
-        <p class="num">01</p>
-        <h3>강점 제목</h3>
-        <p>강점 설명을 적으세요.</p>
-      </div>
-      <div class="feature">
-        <p class="num">02</p>
-        <h3>강점 제목</h3>
-        <p>강점 설명을 적으세요.</p>
-      </div>
-      <div class="feature">
-        <p class="num">03</p>
-        <h3>강점 제목</h3>
-        <p>강점 설명을 적으세요.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 대표 제품 미리보기 — products.json에서 자동으로 채워짐 ===== -->
-  <section class="section">
-    <p class="eyebrow">COLLECTION</p>
-    <h2>대표 룩</h2>
-    <div class="grid" id="home-looks"></div>
-  </section>
-
   <!-- ===== 푸터 (5페이지 공통) [작성서 01: 푸터 표기 정보] ===== -->
   <footer class="footer">
-    <p class="logo">BRAND</p>
+    <p class="logo">SEOLBAEK</p>
     <p class="biz">
       상호: ○○○ · 대표자: ○○○<br />
       사업자등록번호: 000-00-00000 · 주소: ○○○
@@ -95,29 +63,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="catalog.js?v=20260826-rich-editor-1"></script>
-  <script>
-    // 공개 제품 중 '홈 대표 제품'을 최대 4개 보여줍니다.
-    ProductCatalog.loadVisibleProducts()
-      .then((products) => {
-        const featured = products.filter((product) => product.featured);
-        const homeProducts = (featured.length ? featured : products).slice(0, 4);
-        document.getElementById("home-looks").innerHTML = homeProducts
-          .map((p) => {
-            const image = ProductCatalog.safeImageUrl(p.images && p.images[0]);
-            const img = image
-              ? '<img src="' + ProductCatalog.escapeHtml(image) + '" alt="' + ProductCatalog.escapeHtml(p.name) + '" onerror="this.remove()" />'
-              : "";
-            return (
-              '<a class="card" href="product.html?id=' + encodeURIComponent(p.id) + '">' +
-              '<div class="card-img">' + img + "</div>" +
-              '<p class="k">' + ProductCatalog.escapeHtml(p.label || p.category || "") + "</p>" +
-              "<h3>" + ProductCatalog.escapeHtml(p.name) + "</h3></a>"
-            );
-          })
-          .join("");
-      })
-      .catch(() => {});
-  </script>
 </body>
 </html>
