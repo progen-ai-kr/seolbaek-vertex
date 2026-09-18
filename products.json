@@ -30,18 +30,16 @@
       "id": "look-02",
       "published": true,
       "featured": true,
-      "label": "MEN · KNIT",
-      "name": "남성 트임넥 니트",
-      "summary": "부드러운 니트 텍스처와 단정한 트임넥 디자인을 갖춘 남성 데일리 니트",
-      "category": "Knit",
+      "label": "WOMEN · DRESS",
+      "name": "능소화 원피스",
+      "summary": "여러 겹의 오간자를 꽃잎처럼 엮어 만든 능소화 한복 원피스",
+      "category": "Collection",
       "price": "",
       "keywords": [
-        "아이보리 · 연그레이 · 커피 · 진그레이",
-        "트임넥",
-        "M–4XL"
+        "생활한복 · 원피스 · 능소화"
       ],
       "images": [
-        "images/products/look-02/1787721875951-30515286.webp"
+        "images/products/look-02/1789710067789-3f4b3b72.png"
       ],
       "buyLabel": "구매하기",
       "buyLink": "",
@@ -49,7 +47,7 @@
       "sections": [
         {
           "type": "rich_text",
-          "body": "<p><img src=\"images/products/look-02/1787721878184-c17aee33.png\" alt=\"J nd O 브랜드 소개\"></p><p><img src=\"images/products/look-02/1787721879918-f9597545.jpg\" alt=\"남성 트임넥 니트 원단 디테일\"></p><p><img src=\"images/products/look-02/1787721881841-68833463.jpg\" alt=\"남성 트임넥 니트 컬러 구성\"></p><p><img src=\"images/products/look-02/1787721883940-f8521541.png\" alt=\"남성 트임넥 니트 사이즈 표\"></p><p><img src=\"images/products/look-02/1787721885287-19652e08.png\" alt=\"남성 트임넥 니트 측정 안내\"></p>"
+          "body": "<p><img src=\"images/products/look-02/1787721878184-c17aee33.png\" alt=\"J nd O 브랜드 소개\"><br></p><p><img src=\"images/products/look-02/1787721879918-f9597545.jpg\" alt=\"남성 트임넥 니트 원단 디테일\"><br></p><p><img src=\"images/products/look-02/1787721881841-68833463.jpg\" alt=\"남성 트임넥 니트 컬러 구성\"><br></p><p><img src=\"images/products/look-02/1787721883940-f8521541.png\" alt=\"남성 트임넥 니트 사이즈 표\"><br></p><p><img src=\"images/products/look-02/1787721885287-19652e08.png\" alt=\"남성 트임넥 니트 측정 안내\"><br></p>"
         }
       ]
     },
