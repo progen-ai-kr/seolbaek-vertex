@@ -91,17 +91,17 @@
 
 .portfolio-content span[data-brand-font="sans"],
 .product-rich-text span[data-brand-font="sans"] {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-family: var(--font-main);
 }
 
 .portfolio-content span[data-brand-font="serif"],
 .product-rich-text span[data-brand-font="serif"] {
-  font-family: Georgia, "Times New Roman", "Noto Serif KR", Batang, serif;
+  font-family: var(--font-main);
 }
 
 .portfolio-content span[data-brand-font="mono"],
 .product-rich-text span[data-brand-font="mono"] {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-main);
 }
 
 .portfolio-content big[data-brand-size],
@@ -187,7 +187,7 @@
   padding: .12em .3em;
   border-radius: 4px;
   background: var(--surface, #f5f4ef);
-  font-family: "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-main);
   font-size: .9em;
 }
 

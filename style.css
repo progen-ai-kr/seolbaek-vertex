@@ -1,3 +1,20 @@
+/* 부크크 명조 웹폰트: 본문은 Light, 제목과 강조는 Bold를 사용합니다. */
+@font-face {
+  font-family: "BookkMyungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Lt.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BookkMyungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ==========================================================
    ★ 브랜드 디자인 토큰 — 여기 값만 바꾸면 사이트 전체 톤이 바뀝니다
    (예: RE:STITCH → --bg:#F7F4EE; --ink:#111; --accent:#0E5A5A;)
@@ -31,8 +48,8 @@
   --hero-overlay: rgba(234, 227, 210, .34);
   --hero-shadow: rgba(234, 227, 210, .72);
 
-  --font-main: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  --font-display: "Noto Serif KR", "Batang", "바탕", serif;  /* 제목은 차분한 명조 계열 */
+  --font-main: "BookkMyungjo", "Batang", serif;
+  --font-display: "BookkMyungjo", "Batang", serif;  /* 제목은 Bold 굵기를 사용합니다. */
 
   --radius: 2px;
   --maxw: 1080px;
@@ -293,7 +310,7 @@ body {
   isolation: isolate;
   overflow: hidden;
   background-color: var(--bg);
-  background-image: url("images/hero-seolbaek-fabric.png");
+  background-image: url("images/hero-collection-bookk.png");
   background-position: center;
   background-size: cover;
   padding: 72px 22px;
