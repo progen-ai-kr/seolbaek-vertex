@@ -292,27 +292,17 @@ body {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background-color: var(--surface);
-  background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url("images/hero-hanbok-reveal.png");
+  background-color: var(--bg);
+  background-image: url("images/hero-seolbaek-fabric.png");
   background-position: center;
+  background-size: cover;
   padding: 72px 22px;
   gap: 18px;
   color: var(--hero-text);
   border-bottom: 1px solid var(--line);
 }
 .hero::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -25%;
-  bottom: -25%;
-  left: -65%;
-  width: 92%;
-  background: linear-gradient(112deg, transparent 6%, var(--light-edge) 28%, var(--light-glow) 50%, var(--light-edge) 72%, transparent 94%);
-  filter: blur(7px);
-  transform: translateX(0) skewX(-8deg);
-  animation: light-through-time 18s ease-in-out infinite alternate;
-  pointer-events: none;
+  display: none;
 }
 .hero > * { position: relative; z-index: 1; }
 .hero .eyebrow {
@@ -326,7 +316,7 @@ body {
   font-size: clamp(38px, 10vw, 72px);
   font-weight: 400;
   line-height: 1.18;
-  letter-spacing: -.045em;
+  letter-spacing: .04em;
   text-shadow: 0 2px 22px var(--hero-shadow);
 }
 .hero p:not(.eyebrow) {
@@ -673,15 +663,15 @@ body {
 /* ===== 홈: 스크롤하며 오간자가 걷히고 한복의 선이 드러나는 장면 ===== */
 .hero-scene {
   position: relative;
-  height: 165svh;
-  background: var(--surface);
+  height: auto;
+  background: var(--bg);
 }
 .hero-scene .hero {
   --hero-progress: 0;
-  position: sticky;
-  top: var(--nav-height);
+  position: relative;
+  top: auto;
   min-height: calc(100svh - var(--nav-height));
-  height: calc(100svh - var(--nav-height));
+  height: auto;
 }
 .hero-content {
   z-index: 3;
@@ -692,11 +682,7 @@ body {
   gap: 18px;
 }
 .hero-fabric-layers {
-  position: absolute !important;
-  z-index: 0 !important;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
+  display: none;
 }
 .hero-fabric-layer {
   position: absolute;
@@ -725,7 +711,6 @@ body {
 
 @media (min-width: 720px) {
   :root { --nav-height: 69px; }
-  .hero-scene { height: 175svh; }
   .hero-content { gap: 20px; }
 }
 
